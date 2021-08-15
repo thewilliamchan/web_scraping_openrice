@@ -30,11 +30,11 @@ for li in lis:
 
     page_num = 1
     review_count = 0
-    while review_count < 21:
+    while review_count < 11:
         response_review = requests.get(restaurant_url + f'/reviews?page={page_num}', headers=x)
         soup_review = BeautifulSoup(response_review.text, "html.parser")
         for i in range(15):
-            while review_count < 21:
+            while review_count < 11:
                 review_title = soup_review.select(".sr2-review-list-container .review-title a")[i].text.strip()
                 review_content = soup_review.select(".sr2-review-list-container section.review-container")[i]
                 for review_content_a_tag in review_content.select("a"):
